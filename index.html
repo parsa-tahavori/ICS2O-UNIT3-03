@@ -26,12 +26,7 @@
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
     </noscript>
-    <link
-      rel="stylesheet"
-      href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css"
-      media="none"
-      onload="if(media!='all')media='all'"
-    />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-indigo.min.css" />
     <noscript>
       <link
         rel="stylesheet"
@@ -49,28 +44,42 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title">Calculating radius of sphere</span>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
         <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
+          src="./images/Screenshot 2022-11-01 14.41.20.png"
+          alt="Sphere"
           width="25%"
           height="25%"
         />
         <p></p>
+        <img
+          src="./images/Screenshot 2022-11-02 13.41.05.png"
+          alt="formula"
+          width="10%"
+          height="10%"
+        <!-- Textfield with Floating Label -->
+
+        <form action="#">
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="number" step="0.01" id="radius">
+         <label class="mdl-textfield__label" for="radius">Enter radius number</label>
+           <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+        </form>
         <!-- Raised button with ripple -->
         <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
-        >
-          Say "Hello, World!"
+          class="mdl-button mdl-js-button mdl-button--primary"
+          onclick="myButtonClicked()">
+          Calculate
         </button>
         <!-- basic text -->
         <p></p>
-        <div id="hello-world"></div>
+        <br>
+        <br>
+        <div id="volume"></div>
       </main>
     </div>
   </body>

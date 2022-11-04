@@ -1,13 +1,13 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2022 Parsa TAhavori All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Parsa Tahavori
+// Created on: Oct 2022
 // This file contains the JS functions for index.html
 
 "use strict"
 
 /**
- * Check servie worker.
+ * calculate sphere.
  */
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
@@ -19,5 +19,13 @@ if (navigator.serviceWorker) {
  * This function displays an alert.
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  // input
+  const radius = parseFloat(document.getElementById("radius").value)
+
+  // process
+  const volume = (4.0 / 3.0) * Math.PI * radius ** 3
+
+  // output
+  document.getElementById("volume").innerHTML =
+    "volume is: " + volume.toFixed(2) + " cm³"
 }
