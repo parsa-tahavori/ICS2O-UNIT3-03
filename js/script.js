@@ -1,31 +1,19 @@
-// Copyright (c) 2022 Parsa TAhavori All rights reserved
+// Copyright (c) 2022 Parsa Tahavori All rights reserved
 //
 // Created by: Parsa Tahavori
-// Created on: Oct 2022
+// Created on: Nov 2022
 // This file contains the JS functions for index.html
 
-"use strict"
-
+'use strict'
 /**
- * calculate sphere.
+ * This function calculates the volume of a sphere.
  */
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
-  })
-}
-
-/**
- * This function displays an alert.
- */
-function myButtonClicked() {
+function calculate () {
   // input
-  const radius = parseFloat(document.getElementById("radius").value)
-
+  const radius = parseInt(document.getElementById("radius").value)
   // process
-  const volume = (4.0 / 3.0) * Math.PI * radius ** 3
-
+  const volume = 4/3 * Math.PI * Math.pow(radius, 3)
   // output
   document.getElementById("volume").innerHTML =
-    "volume is: " + volume.toFixed(2) + " cm³"
+    "The volume is: " + volume.toFixed(2) + ' cm³' 
 }

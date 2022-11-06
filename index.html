@@ -1,85 +1,61 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA --->
-<html lang="en">
+<!--ICS20-Unit-3-03-js-->
+<html lang="en-ca">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first PWA" />
-    <meta name="keywords" content="mths, ics2o" />
-    <meta name="author" content="Parsa Tahavori" />
-    <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
-    <link rel="canonical" href="https://mr-coxall.github.io/ICS2O-PWA-Test/" />
-    <link rel="manifest" href="/ICS2O-PWA-Test/manifest.webmanifest" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <!--- None blocking for Lighthouse report --->
-    <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      media="none"
-      onload="if(media!='all')media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      />
-    </noscript>
-    <link
-      rel="stylesheet"
-      href="https://code.getmdl.io/1.3.0/material.teal-indigo.min.css"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css"
-      />
-    </noscript>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <meta charset="utf-8">
+    <meta name="description" content="Volume of a sphere with JavaScript">
+    <meta name="keywords" content="mths, ics2o">
+    <meta name="author" content="Parsa Tahavori">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.lime-deep_orange.min.css"/>    
+    <title>Volume of a sphere</title>
   </head>
-  <title>My first PWA</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js"></script>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Calculating radius of sphere</span>
+    <div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class = "mdl-layout__header">
+        <div class = "mdl-layout__header-row">      
+          <span class = "mdl-layout-title">Volume of a sphere</span>
         </div>
       </header>
-      <main class="mdl-layout__content">
-        <h1>V=4/3πr^3</h1>
+      <main class = "mdl-layout__content">
+        <br>
+        <br>
+        <table>
+          <tr>
+            <th>
+              <h3>Formula</h3>
+              <h4>V= 4/3πr³</h4>
+            </th>
+            <th>
+              <img src="./images/download.png" align="right" alt="rectangle" width="75%" height="auto" />
+            </th>
+          </tr>
+        </table>
+        <!-- Numeric Textfield -->
         <form action="#">
-          <div
-            class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-          >
-            <input
-              class="mdl-textfield__input"
-              type="number"
-              step="0.01"
-              id="radius"
-            />
-            <label class="mdl-textfield__label" for="radius"
-              >Enter radius number</label
-            >
+          <p>Radius</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="radius">
+            <label class="mdl-textfield__label" for="base-A">Enter radius</label>
             <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
         </form>
+        
         <!-- Raised button with ripple -->
-        <button
-          class="mdl-button mdl-js-button mdl-button--primary"
-          onclick="myButtonClicked()"
-        >
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="calculate()">
           Calculate
         </button>
-        <!-- basic text -->
-        <p></p>
-        <br />
-        <br />
-        <div id="volume"></div>
+        <br>
+        <br>
+          <div id="volume"></div>
       </main>
     </div>
   </body>
